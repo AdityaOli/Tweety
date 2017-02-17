@@ -1,2 +1,2 @@
 # Tweety
-A Flask Application using three legged auth twitter API
+Twitter Tweeting and Searching using python+flask+tweepy

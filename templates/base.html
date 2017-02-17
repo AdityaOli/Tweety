@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+		<link rel="icon" href="/static/favicon-twitter.ico" alt="Tweety" type="image/ico" />
+
+    <title>Tweety {% block title %}{% endblock %} </title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Including Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<!----------------------- CSS for our birdie ------------------------>
+<style>
+.twitter-bird
+{
+    background-image: url(/static/tw.png);
+    display: inline-block;
+    height: 38px;
+    width: 37.5px;
+    top:5px;
+    color: #ffeb3b;
+}
+
+.twitter-bird
+{
+    animation: fly 0.2s steps(3) 0 infinite;
+}
+
+@keyframes fly
+{
+    from { background-position: 0 0; }
+    to { background-position: -112.5px 0; }
+}
+.twitter-bird
+{
+    -webkit-animation: fly .4s steps(3) infinite;
+       -moz-animation: fly .4s steps(3) infinite;
+        -ms-animation: fly .4s steps(3) infinite;
+         -o-animation: fly .4s steps(3) infinite;
+            animation: fly .4s steps(3) infinite;
+}
+
+@-webkit-keyframes fly {
+   from { background-position:    0px; }
+     to { background-position: -112.5px; }
+}
+
+@-moz-keyframes fly {
+   from { background-position:    0px; }
+     to { background-position: -112.5px; }
+}
+
+@-ms-keyframes fly {
+   from { background-position:    0px; }
+     to { background-position: -112.5px; }
+}
+
+@-o-keyframes fly {
+   from { background-position:    0px; }
+     to { background-position: -112.5px; }
+}
+
+@keyframes fly {
+   from { background-position:    0px; }
+     to { background-position: -112.5px; }
+}
+</style>
+  </head>
+
+  <body>
+  <header>
+    <nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#" style="font-family:Bookman Old Style; color:#ffeb3b; font-size:30px;"> Tweety </a>
+  </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-left">
+          <li>
+            <span class="twitter-bird"></span>
+          </li>
+      </ul>
+      {% if session['screen_name'] !=  "" and session['user_id'] !=  "" %}
+          <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <strong style="color:#ffeb3b;">{{ name }}</strong>
+                </li>
+                <li>
+                  <span class="icon-bar"></span>
+                </li>
+                <li>
+                  <img src="{{ dp }}"></img>
+                </li>
+          </ul>
+      {% endif %}
+    </div>
+    </nav>
+  </header></div>
+</div>
+
+  	<div class="container">
+			<div class="jumbotron">
+  	    {% block containercontent %}{% endblock %}
+		<div class="footer">
+			<p class="text-muted">
+			<small>
+				Some very very basic examples of twitter API with python. Made with <span class="fa fa-heart" style="color:red;"></span>
+				by <a href="https://github.com/AdityaOli">@AdityaOli</a>
+				</small>
+			</p>
+		</div>
+	</div>
+	</div>
+  </body>
+</html>
